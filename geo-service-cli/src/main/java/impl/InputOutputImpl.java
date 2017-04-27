@@ -14,12 +14,13 @@ public class InputOutputImpl implements InputOutputDAO {
 
 	@Autowired
 	Sort sort;
-	
+
 	@Autowired
 	UpdateFileOfPoint updateFileOfPoint;
 
 	public static final String PATH = "C:\\Users\\Violett\\workspace_\\geo-service\\geo-service-cli\\file-storage\\";
 
+	@Override
 	public ArrayList<String> readFile(int id) {
 		ArrayList<String> file_to_string = new ArrayList<String>();
 		String path = PATH + Integer.toString(id) + ".txt";
@@ -44,6 +45,26 @@ public class InputOutputImpl implements InputOutputDAO {
 		return file_to_string;
 	}
 
+	public ArrayList<String> readFile(String path) {
+		ArrayList<String> file_to_string = new ArrayList<String>();
+
+		File file = new File(path);
+
+		try {
+			BufferedReader bw = new BufferedReader(new FileReader(file));
+
+			String line;
+			while ((line = bw.readLine()) != null) {
+				file_to_string.add(line);
+			}
+		} catch (IOException ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		return file_to_string;
+	}
+
+	@Override
 	public void writeFile(String str, int id) {
 
 		String path = PATH + Integer.toString(id) + ".txt";
@@ -69,8 +90,7 @@ public class InputOutputImpl implements InputOutputDAO {
 				bw1.newLine();
 				bw1.flush();
 			}
-			updateFileOfPoint.updateFileOfPoint(id);
-			
+
 		} catch (IOException ex) {
 			System.out.println(ex.getMessage());
 		}

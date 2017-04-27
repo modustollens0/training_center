@@ -6,6 +6,6 @@ import java.util.List;
 public interface LocationDAO {
 	
 	public List<Float> getTravelHistory(int Id, LocalDateTime start, LocalDateTime end);
-	public void put(int Id, float latitude, float longitude, LocalDateTime time);
+	public void put(int id, float latitude, float longitude, LocalDateTime time);
 
 }

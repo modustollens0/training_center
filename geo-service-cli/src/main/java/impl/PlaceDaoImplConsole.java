@@ -40,8 +40,11 @@ public class PlaceDaoImplConsole implements LocationDAO {
 		return travelHistory;
 	}
 
-	public void put(int Id, float latitude, float longitude, LocalDateTime time) {
-		// TODO Auto-generated method stub
+	public void put(int id, float latitude, float longitude, LocalDateTime time) {
+		StringBuilder str = new StringBuilder();
+		str.append(id).append(" ").append(latitude).append(" ").append(longitude).append(" ").append(time);
+		
+		readWriteFile.writeFile(str.toString(), id);
 
 	}
 

@@ -57,11 +57,8 @@ public class EntityDaoImplConsole implements EntityDAO {
 	}
 
 	@Override
-	public void put(int id, String name, float latitude, float longitude, LocalDateTime time) {
-		StringBuilder str = new StringBuilder();
-		str.append(id).append(" ").append(name).append(" ").append(latitude).append(" ").append(longitude).append(" ").append(time);
+	public void put(int id, String name) {
 		
-		readWriteFile.writeFile(str.toString(), id);
 	}
 
 	
