@@ -9,6 +9,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import impl.EntityDaoImplConsole;
+import impl.EntityImplDB;
+import impl.LocationImplDB;
 import impl.ParseString;
 import impl.PlaceDaoImplConsole;
 import impl.UpdateFileOfPoint;
@@ -17,10 +19,12 @@ import print.PrintAllPoint;
 public class MainGeoService {
 		
 	@Autowired
-    static EntityDaoImplConsole entityDaoConsole;
+	static EntityImplDB entityImplDB;
+   // static EntityDaoImplConsole entityDaoConsole;
 	
 	@Autowired
-    static PlaceDaoImplConsole placeDaoConsole;
+	static LocationImplDB locationImplDB;
+  //  static PlaceDaoImplConsole placeDaoConsole;
 	
 	@Autowired
 	static ParseString parseString;
@@ -30,15 +34,13 @@ public class MainGeoService {
 	
 	public static void main(String [] args)
 	{		
-		System.out.println("HELP");
-			
 		ApplicationContext context = new ClassPathXmlApplicationContext("console-app.xml");
 		ParseString parseString = (ParseString)context.getBean("parseString");
-		EntityDaoImplConsole entityDaoConsole = (EntityDaoImplConsole)context.getBean("entityDaoImplConsole");
-		PlaceDaoImplConsole placeDaoConsole = (PlaceDaoImplConsole)context.getBean("placeDaoImplConsole");
-		UpdateFileOfPoint updateFileOfPoint = (UpdateFileOfPoint)context.getBean("updateFileOfPoint");
-		PrintAllPoint printAllPoints = (PrintAllPoint)context.getBean("printAllPoint");
+	//	EntityDaoImplConsole entityDaoConsole = (EntityDaoImplConsole)context.getBean("entityDaoImplConsole");
+	//	PlaceDaoImplConsole placeDaoConsole = (PlaceDaoImplConsole)context.getBean("placeDaoImplConsole");
 		
+		EntityImplDB entityDaoConsole = (EntityImplDB)context.getBean("entityImplDB");
+		LocationImplDB placeDaoConsole = (LocationImplDB)context.getBean("locationImplDB");
 		
 		System.out.println("HELP");
 			System.out.println(" Hi! Write the command: "
@@ -51,7 +53,7 @@ public class MainGeoService {
 			Scanner sc = new Scanner(System.in);
 			String choose="";
 			
-			while(!choose.equals("q"))
+			while(!choose.equals("quit"))
 			{
 				choose = sc.nextLine();
 				choose.trim();
@@ -83,6 +85,7 @@ public class MainGeoService {
 				{
 					entityDaoConsole.getAll();
 				}
+				choose = sc.nextLine();
 			}
 	}
 }

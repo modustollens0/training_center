@@ -81,9 +81,6 @@ public class InputOutputImpl implements InputOutputDAO {
 			ArrayList<String> sortedFile = new ArrayList<String>();
 			sortedFile = sort.sorting(readFile(id));
 
-			// file.delete();
-			// file.createNewFile();
-
 			BufferedWriter bw1 = new BufferedWriter(new FileWriter(file));
 			for (int i = 0; i < sortedFile.size(); i++) {
 				bw1.write(sortedFile.get(i));
