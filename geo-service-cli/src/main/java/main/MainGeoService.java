@@ -12,7 +12,7 @@ import impl.EntityDaoImplConsole;
 import impl.ParseString;
 import impl.PlaceDaoImplConsole;
 import impl.UpdateFileOfPoint;
-
+import print.PrintAllPoint;
 
 public class MainGeoService {
 		
@@ -26,7 +26,7 @@ public class MainGeoService {
 	static ParseString parseString;
 	
 	@Autowired
-	static UpdateFileOfPoint updateFileOfPoint;
+	static PrintAllPoint printAllPoint;
 	
 	public static void main(String [] args)
 	{		
@@ -37,6 +37,8 @@ public class MainGeoService {
 		EntityDaoImplConsole entityDaoConsole = (EntityDaoImplConsole)context.getBean("entityDaoImplConsole");
 		PlaceDaoImplConsole placeDaoConsole = (PlaceDaoImplConsole)context.getBean("placeDaoImplConsole");
 		UpdateFileOfPoint updateFileOfPoint = (UpdateFileOfPoint)context.getBean("updateFileOfPoint");
+		PrintAllPoint printAllPoints = (PrintAllPoint)context.getBean("printAllPoint");
+		
 		
 		System.out.println("HELP");
 			System.out.println(" Hi! Write the command: "
@@ -65,8 +67,7 @@ public class MainGeoService {
 				}
 				if(command.get(2).equals("point"))
 				{
-					
-					updateFileOfPoint.updateFileOfPoint(Integer.valueOf(command.get(3)), command.get(4));
+					entityDaoConsole.put(Integer.valueOf(command.get(3)), command.get(4));
 				}
 				if(command.get(1).equals("travel"))
 				{

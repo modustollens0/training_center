@@ -1,4 +1,5 @@
 package impl;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -20,6 +21,7 @@ public class UpdateFileOfPoint {
 
 	public static final String PATH = "C:\\Users\\Violett\\workspace_\\geo-service\\geo-service-cli\\file-storage\\";
 
+	@SuppressWarnings("rawtypes")
 	public void updateFileOfPoint(int id, String name) {
 
 		System.out.println("updateFile");
@@ -34,6 +36,7 @@ public class UpdateFileOfPoint {
 			ArrayList<String> tmp = new ArrayList<String>();
 			tmp = readWriteFile.readFile(path);
 
+			@SuppressWarnings("resource")
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
 			if (tmp.size() == 0) {
 

@@ -12,7 +12,8 @@
  
   <context:annotation-config/>
    
-   
+   <bean id="printAllPoint" class="print.PrintAllPoint">
+	</bean>
 	
  	<bean id="readWriteFile" class="impl.InputOutputImpl">
 	</bean>

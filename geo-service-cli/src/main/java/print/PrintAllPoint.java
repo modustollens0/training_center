@@ -10,8 +10,9 @@ public class PrintAllPoint {
 	{
 		for (int i = 0; i < allPoint.size(); i++) {
 			System.out.println("Point with id " + allPoint.get(i).getEntityId());
-			System.out.println("latitude" + allPoint.get(i).getLatitude() + " longitude "
-					+ allPoint.get(i).getLongitude(allPoint.get(i).getEntityId()));
+			System.out.println(" latitude " + allPoint.get(i).getLatitude() + " longitude "
+					+ allPoint.get(i).getLongitude(allPoint.get(i).getEntityId()) + "  Time= "
+					+ allPoint.get(i).getTime(i));
 		}
 
 	}
