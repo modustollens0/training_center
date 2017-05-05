@@ -11,6 +11,7 @@
   <modules>
   	<module>geo-service-api</module>
   	<module>geo-service-cli</module>
+  	<module>geo-service-impl</module>
   </modules>
   
       

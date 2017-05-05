@@ -18,8 +18,7 @@ import print.PrintAllPoint;
 
 public class MainGeoService {
 		
-	@Autowired
-	static EntityImplDB entityImplDB;
+
    // static EntityDaoImplConsole entityDaoConsole;
 	
 	@Autowired
@@ -39,7 +38,6 @@ public class MainGeoService {
 	//	EntityDaoImplConsole entityDaoConsole = (EntityDaoImplConsole)context.getBean("entityDaoImplConsole");
 	//	PlaceDaoImplConsole placeDaoConsole = (PlaceDaoImplConsole)context.getBean("placeDaoImplConsole");
 		
-		EntityImplDB entityDaoConsole = (EntityImplDB)context.getBean("entityImplDB");
 		LocationImplDB placeDaoConsole = (LocationImplDB)context.getBean("locationImplDB");
 		
 		System.out.println("HELP");
