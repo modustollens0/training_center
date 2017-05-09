@@ -22,17 +22,11 @@
    	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>  
-   
-   	<bean id="entityImplDB" class="impl.EntityImplDB">
-	</bean> 
-  
- 	<bean id="locationImplDB" class="impl.LocationImplDB">
-	</bean>  
-   
-	<bean id="entityDaoImplConsole" class="impl.EntityDaoImplConsole">
+ 
+	<bean id="fileDAOImpl" class="impl.FileDAOImpl">
 	</bean>
 	
-	<bean id="placeDaoImplConsole" class="impl.PlaceDaoImplConsole">
+	<bean id="databaseDAOImpl" class="impl.DataBaseDAOImpl">
 	</bean>
 	
  <!--  <context:component-scan base-package="impl.EntityDaoImpl" />  

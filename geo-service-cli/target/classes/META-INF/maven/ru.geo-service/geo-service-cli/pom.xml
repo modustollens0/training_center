@@ -15,9 +15,18 @@
     <version>0.0.1-SNAPSHOT</version>
   </dependency>
   
+   <dependency>
+  <groupId>ru.geo-service</groupId>
+    <artifactId>geo-service-impl</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </dependency>
   
+   <dependency>
+  <groupId>ru.geo-service</groupId>
+    <artifactId>geo-service-storage-file-impl</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+    
   </dependencies>
-  
-  
   
 </project>

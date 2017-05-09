@@ -5,25 +5,14 @@
     <artifactId>geo-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>geo-service-cli</artifactId>
+  <artifactId>geo-service-storage-file-impl</artifactId>
   
-  <dependencies>
+   <dependencies>
+
   
   <dependency>
   <groupId>ru.geo-service</groupId>
-    <artifactId>geo-service-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </dependency>
-  
-   <dependency>
-  <groupId>ru.geo-service</groupId>
-    <artifactId>geo-service-impl</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </dependency>
-  
-   <dependency>
-  <groupId>ru.geo-service</groupId>
-    <artifactId>geo-service-storage-file-impl</artifactId>
+    <artifactId>geo-service-storage-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </dependency>
     

@@ -12,6 +12,10 @@
   	<module>geo-service-api</module>
   	<module>geo-service-cli</module>
   	<module>geo-service-impl</module>
+  	<module>geo-service-storage-api</module>
+  	<module>geo-service-storage-file-impl</module>
+  	<module>go-service-storage-db-impl</module>
+  	<module>geo-service-storage-db-impl</module>
   </modules>
   
       

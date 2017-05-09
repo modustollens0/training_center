@@ -22,33 +22,16 @@
    	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>  
-   
-   	<bean id="entityImplDB" class="impl.EntityImplDB">
-	</bean> 
   
- 	<bean id="locationImplDB" class="impl.LocationImplDB">
-	</bean>  
-   
-   <bean id="printAllPoint" class="print.PrintAllPoint">
-	</bean>
-	
- 	<bean id="readWriteFile" class="impl.InputOutputImpl">
-	</bean>
-	
-	<bean id="updateFileOfPoint" class="impl.UpdateFileOfPoint">
-	</bean>
-	
- 	<bean id="sort" class="impl.Sort">
-	</bean>   
+ 
 	
 	<bean id="parseString" class="impl.ParseString">
 	</bean>
 	
-	<bean id="entityDaoImplConsole" class="impl.EntityDaoImplConsole">
-	</bean>
 	
-	<bean id="placeDaoImplConsole" class="impl.PlaceDaoImplConsole">
+	<bean id="geoServiceEngine" class="impl.GeoServiceEngine">
 	</bean>
+ 
 	
  <!--  <context:component-scan base-package="impl.EntityDaoImpl" />  
    

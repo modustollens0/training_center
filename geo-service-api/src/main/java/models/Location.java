@@ -1,11 +1,11 @@
 package models;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class Location {
 
 	private float latitude;
 	private float longitude;
-	private LocalDateTime time;//timeStamp
+	private Timestamp time;//timeStamp
 	private int entityId;
 	
 	public void setLatitude(int Id, float latitude)
@@ -29,12 +29,12 @@ public class Location {
 		return longitude; 
 	}
 	
-	public void setTime(int Id, LocalDateTime time)
+	public void setTime(int Id, Timestamp time)
 	{
 		 this.time = time;
 	}
 	
-	public LocalDateTime getTime(int Id)
+	public Timestamp getTime(int Id)
 	{
 		return time; 
 	}
