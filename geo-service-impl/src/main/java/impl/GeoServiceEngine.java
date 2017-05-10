@@ -1,5 +1,4 @@
 package impl;
-
 import java.sql.Timestamp;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,30 +9,29 @@ import models.Location;
 public class GeoServiceEngine implements EntityDAO, LocationDAO {
 
 	@Autowired
-	private FileDAOImpl fileDAOImpl;
+	private FileDAOImpl storage;
 
+	@Override
 	public Location currentCoordinatesById(int id) {
 
-		return fileDAOImpl.currentCoordinatesById(id);
+		return storage.currentCoordinatesById(id);
 	}
-
+	@Override
 	public List<Location> getAll() {
 
-		return fileDAOImpl.getAll();
+		return storage.getAll();
 	}
-
+	@Override
 	public void put(int id, String name) {
-		fileDAOImpl.put(id, name);
-
+		storage.put(id, name);
 	}
-
+	@Override
 	public List<Float> getTravelHistory(int id, Timestamp start, Timestamp end) {
-		return fileDAOImpl.getTravelHistory(id, start, end);
+		return storage.getTravelHistory(id, start, end);
 	}
-
+	@Override
 	public void put(int id, float latitude, float longitude, Timestamp time) {
-		fileDAOImpl.put(id, latitude, longitude, time);
-
+		storage.put(id, latitude, longitude, time);
 	}
 
 }

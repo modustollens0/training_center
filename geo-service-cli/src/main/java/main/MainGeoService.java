@@ -20,10 +20,8 @@ public class MainGeoService {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("console-app.xml");
-		ParseString parseString = (ParseString) context.getBean("parseString");
-		GeoServiceEngine geoServiceEngine = (GeoServiceEngine) context.getBean("geoServiceEngine");
-		// PrintAllPoint printAllPoint =
-		// (PrintAllPoint)context.getBean("printAllPoint");
+		ParseString parseString = (ParseString)context.getBean("parseString");
+		GeoServiceEngine geoServiceEngine = (GeoServiceEngine)context.getBean("geoServiceEngine");
 
 		System.out.println("HELP");
 		System.out.println(" Hi! Write the command: " + "\n 0.put the coordinates (Id, name, latitude, longitude, time)"
@@ -43,13 +41,13 @@ public class MainGeoService {
 
 			if (command.get(2).equals("coordinates")) {
 				geoServiceEngine.put(Integer.valueOf(command.get(3)), Float.valueOf(command.get(4)),
-						Float.valueOf(command.get(5)), Timestamp.valueOf(command.get(6)));
+						Float.valueOf(command.get(5)), Timestamp.valueOf(command.get(6) + " " + command.get(7)));
 			}
 			if (command.get(2).equals("point")) {
 				geoServiceEngine.put(Integer.valueOf(command.get(3)), command.get(4));
 			}
 			if (command.get(1).equals("travel")) {
-				geoServiceEngine.getTravelHistory(Integer.parseInt(command.get(3)), Timestamp.valueOf(command.get(4)),
+				geoServiceEngine.getTravelHistory(Integer.parseInt(command.get(3)), Timestamp.valueOf(command.get(4)+ " " + command.get(5)),
 						Timestamp.valueOf(command.get(5)));
 			}
 			if (command.get(1).equals("coordinates")) {

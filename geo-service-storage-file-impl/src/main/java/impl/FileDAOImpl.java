@@ -1,15 +1,16 @@
 package impl;
-
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import dao.EntityDAO;
 import dao.LocationDAO;
-import models.Entity;
 import models.Location;
 import print.PrintAllPoint;
 
+//@Repository("EntityDAO")
 public class FileDAOImpl implements EntityDAO, LocationDAO {
 
 	public static final String PATH = "C:\\Users\\Violett\\workspace_\\geo-service\\geo-service-cli\\file-storage\\AllPoints.txt";
@@ -25,7 +26,7 @@ public class FileDAOImpl implements EntityDAO, LocationDAO {
 	@Autowired
 	private PrintAllPoint printAllPoint;
 
-	
+	@Override
 	public Location currentCoordinatesById(int id) {
 
 		Location Coordinates = new Location();
@@ -45,7 +46,7 @@ public class FileDAOImpl implements EntityDAO, LocationDAO {
 
 		return Coordinates;
 	}
-
+	@Override
 	public List<Location> getAll() {
 		List<Location> locationList = new ArrayList<Location>();
 
@@ -74,11 +75,11 @@ public class FileDAOImpl implements EntityDAO, LocationDAO {
 
 		return locationList;
 	}
-
+	@Override
 	public void put(int id, String name) {
 		updateFileOfPoint.updateFileOfPoint(id, name);
 	}
-
+	@Override
 	public List<Float> getTravelHistory(int id, Timestamp start, Timestamp end) {
 
 		List<Float> travelHistory = new ArrayList<Float>();
@@ -102,11 +103,12 @@ public class FileDAOImpl implements EntityDAO, LocationDAO {
 
 		return travelHistory;
 	}
-
+	@Override
 	public void put(int id, float latitude, float longitude, Timestamp time) {
 		StringBuilder str = new StringBuilder();
 		str.append(id).append(" ").append(latitude).append(" ").append(longitude).append(" ").append(time);
 
 		readWriteFile.writeFile(str.toString(), id);
-	}
+	} 
+	
 }

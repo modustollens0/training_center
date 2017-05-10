@@ -29,8 +29,20 @@
 	<bean id="databaseDAOImpl" class="impl.DataBaseDAOImpl">
 	</bean>
 	
- <!--  <context:component-scan base-package="impl.EntityDaoImpl" />  
-   
-	 	<bean id="entityDao" class="DAO.EntityDAO"/> --> 
+	<bean id="parseString" class="impl.ParseString">
+	</bean>
+		
+	<bean id="readWriteFile" class="impl.InputOutputImpl">
+	</bean>
+	
+	<bean id="updateFileOfPoint" class="impl.UpdateFileOfPoint">
+	</bean>
+	
+	<bean id="printAllPoint" class="print.PrintAllPoint">
+	</bean>
+	
+	
+  <context:component-scan base-package="src.main.java.impl" />  
+	
  
 </beans> 

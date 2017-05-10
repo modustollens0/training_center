@@ -25,29 +25,8 @@
  	
 	<bean id="parseString" class="impl.ParseString">
 	</bean>
-		
-	<bean id="geoServiceEngine" class="impl.GeoServiceEngine">
-	</bean>
+
  
- 	<bean id="fileDAOImpl" class="impl.FileDAOImpl">
-	</bean>
-	
-	<bean id="databaseDAOImpl" class="impl.DataBaseDAOImpl">
-	</bean>
-	
-	<bean id="sort" class="impl.Sort">
-	</bean>
-		
-	<bean id="readWriteFile" class="impl.InputOutputImpl">
-	</bean>
-	
-	<bean id="updateFileOfPoint" class="impl.UpdateFileOfPoint">
-	</bean>
-	
-	<bean id="printAllPoint" class="print.PrintAllPoint">
-	</bean>
-	
-	
  <!--  <context:component-scan base-package="impl.EntityDaoImpl" />  
    
 	 	<bean id="entityDao" class="DAO.EntityDAO"/> --> 
